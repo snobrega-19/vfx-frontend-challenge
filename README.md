@@ -4,15 +4,15 @@ A user-friendly React application that provides daily forex prices and allows ma
 
 ## 📌 Table of Contents
 
-- [Features](#features)
-- [Technologies Used](#technologies-used)
-- [Getting Started](#getting-started)
-  - [Prerequisites](#prerequisites)
-  - [Running the Application](#running-the-application)
-  - [Environment Variables](#environment-variables)
-- [Login Credentials](#login-credentials)  
-- [Fallback Data](#fallback-data)  
-- [Folder Structure](#folder-structure)  
+- [Features](#-features)
+- [Technologies Used](#-technologies-used)
+- [Getting Started](#-getting-started)
+  - [Prerequisites](#-prerequisites)
+  - [Running the Application](#-running-the-application)
+  - [Environment Variables](#-environment-variables)
+- [Login Credentials](#-login-credentials)  
+- [Fallback Data](#-fallback-data)  
+- [Folder Structure](#-folder-structure)  
 
 
 ## 🚀 Features
@@ -79,7 +79,7 @@ Create a .env file inside client folder with the following:
    ```
     
 
-### 🔑 Login Credentials
+## 🔑 Login Credentials
 
 To login sucessfully in this application, you need to enter the following credentials:
    ```bash
@@ -88,12 +88,12 @@ To login sucessfully in this application, you need to enter the following creden
    Password: password
    ```
 
-### 🔄 Fallback Data
+## 🔄 Fallback Data
 
 Since sometimes it might occur some problems while trying to get forex daily prices from api, for those situations, the application will use a json file as backup data so it can show something on the table. The only thing will not work, is the part where you change the currency and the table is updated with new information.
 
 
-### 📂 Folder Structure
+## 📂 Folder Structure
 
   ```bash
   vfx-frontend-challenge/
@@ -102,6 +102,7 @@ Since sometimes it might occur some problems while trying to get forex daily pri
   │── docker-compose.yml  # Docker configuration
   │── forexDailyPrices.json  # Backup JSON data
   │── README.md      # Documentation
+  ```
 
 - Frontend (client):
     - Built with React.js & TypeScript.
