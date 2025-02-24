@@ -1,8 +1,17 @@
 services:
-  frontendchallenge:
-    image: frontendchallenge
+  client:
     build:
-      context: .
-      dockerfile: ./Dockerfile
+      context: ./client
     ports:
       - 3000:3000
+
+  server:
+    build: 
+      context: ./server
+    environment:
+      - VANTAGE_API_KEY=${VANTAGE_API_KEY}
+      - ALPHA_VANTAGE_API_URL=${ALPHA_VANTAGE_API_URL}
+      - FRONTEND_URL=${FRONTEND_URL}
+      - PORT=${PORT}
+    ports:
+      - 5001:5001

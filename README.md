@@ -1,100 +1,93 @@
-# Welcome to React Router!
+# Forex Prices App
 
-A modern, production-ready template for building full-stack React applications using React Router.
+A user-friendly React application that provides daily forex prices and allows management of beneficiaries. This application connects to the **Alpha Vantage API** to retrieve and display forex data.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/remix-run/react-router-templates/tree/main/default)
+## 📌 Table of Contents
 
-## Features
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Running the Application](#running-the-application)
+- [Login Credentials](#login-credentials)  
+- [Fallback Data](#fallback-data)  
+- [Folder Structure](#folder-structure)  
+- [Contributing](#contributing)  
 
-- 🚀 Server-side rendering
-- ⚡️ Hot Module Replacement (HMR)
-- 📦 Asset bundling and optimization
-- 🔄 Data loading and mutations
-- 🔒 TypeScript by default
-- 🎉 TailwindCSS for styling
-- 📖 [React Router docs](https://reactrouter.com/)
 
-## Getting Started
+## 🚀 Features
 
-### Installation
+✅ **Login functionality** with dummy validation.
 
-Install the dependencies:
+✅ **Display of daily forex prices** in a table format.
 
-```bash
-npm install
-```
+✅ **Dynamic currency selection** with automatic updates.
 
-### Development
+✅ **Manual refresh option** for real-time data updates.
 
-Start the development server with HMR:
+✅ **Fallback to local JSON data** if the API fails.
 
-```bash
-npm run dev
-```
+## 🛠 Technologies Used
 
-Your application will be available at `http://localhost:5173`.
+- **Frontend:** React.js, TypeScript, Tailwind CSS  
+- **Backend:** Express.js, Node.js  
+- **API Calls:** Axios  
+- **Containerization:** Docker & Docker Compose 
 
-## Building for Production
+## ⚡ Getting Started
 
-Create a production build:
+### 📌 Prerequisites
 
-```bash
-npm run build
-```
+To run this project, you need to have Docker and Docker Compose installed on your machine. If you haven't installed them yet, you can follow the links below:
 
-## Deployment
+- [Install Docker](https://docs.docker.com/get-docker/)
+- [Install Docker Compose](https://docs.docker.com/compose/install/)
 
-### Docker Deployment
+### 🏃 Running the Application
 
-This template includes three Dockerfiles optimized for different package managers:
+1. **Clone this repository:**
 
-- `Dockerfile` - for npm
-- `Dockerfile.pnpm` - for pnpm
-- `Dockerfile.bun` - for bun
+   ```bash
+   git clone https://github.com/snobrega-19/vfx-frontend-challenge.git
 
-To build and run using Docker:
+   cd vfx-frontend-challenge
 
-```bash
-# For npm
-docker build -t my-app .
+2. **Build and run the application** using Docker Compose:
+ 
+    ```bash
+    docker-compose up --build
 
-# For pnpm
-docker build -f Dockerfile.pnpm -t my-app .
+3. Open your browser and **navigate to http://localhost:3000**
 
-# For bun
-docker build -f Dockerfile.bun -t my-app .
+### 🔑 Login Credentials
 
-# Run the container
-docker run -p 3000:3000 my-app
-```
+To login sucessfully in this application, you need to enter the following credentials:
 
-The containerized application can be deployed to any platform that supports Docker, including:
+    Client ID: 123  
+    User ID: 345  
+    Password: password  
 
-- AWS ECS
-- Google Cloud Run
-- Azure Container Apps
-- Digital Ocean App Platform
-- Fly.io
-- Railway
 
-### DIY Deployment
+### 🔄 Fallback Data
 
-If you're familiar with deploying Node applications, the built-in app server is production-ready.
+If any problem occurs with the API, the application will use a json file as backup data.
 
-Make sure to deploy the output of `npm run build`
 
-```
-├── package.json
-├── package-lock.json (or pnpm-lock.yaml, or bun.lockb)
-├── build/
-│   ├── client/    # Static assets
-│   └── server/    # Server-side code
-```
+### 📂 Folder Structure
 
-## Styling
+  ```bash
+  vfx-frontend-challenge/
+  │── client/        # Frontend code (React, TypeScript, Tailwind)
+  │── server/        # Backend code (Express, Node.js)
+  │── docker-compose.yml  # Docker configuration
+  │── forexDailyPrices.json  # Backup JSON data
+  │── README.md      # Documentation
 
-This template comes with [Tailwind CSS](https://tailwindcss.com/) already configured for a simple default starting experience. You can use whatever CSS framework you prefer.
+- Frontend (client):
+    - Built with React.js & TypeScript.
+    - Uses React Context for authentication state.
+    - Calls the backend to fetch forex data.
 
----
-
-Built with ❤️ using React Router.
+- Backend (server):
+    - Built with Express.js.
+    - Acts as a proxy to prevent API key exposure.
