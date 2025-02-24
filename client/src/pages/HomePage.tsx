@@ -24,7 +24,6 @@ const HomePage = () => {
       Currency[toCurrency as keyof typeof Currency] ?? Currency.USD;
 
     const data = await fetchForexDailyPrices(fromCurrencyEnum, toCurrencyEnum);
-    console.log("data: ", data);
     const forexData = convertNestedJsonToArray(data);
     const mostRecentItem = forexData[0];
     setLastDailyPrice(mostRecentItem);

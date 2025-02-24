@@ -23,10 +23,6 @@ export const fetchForexDailyPrices = async (
         return data?.data["Time Series FX (Daily)"];
     }
   } catch (error) {
-    console.log(error);
-
-    console.log("catch");
-
     const data = await axios.get("./forexDailyPrices.json");
     if (data && data?.data["Time Series FX (Daily)"])
       return data?.data["Time Series FX (Daily)"];
