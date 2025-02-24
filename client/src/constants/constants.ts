@@ -3,3 +3,5 @@ export const LoginDummyData = {
   userId: "345",
   password: "password",
 };
+
+export const FormFields = ["clientId", "userId", "password"];
